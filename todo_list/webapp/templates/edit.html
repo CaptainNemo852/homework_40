@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block title %}Редактировать задачу{% endblock %}
+{% block content %}
+    <form action="{% url 'task_edit' task.pk %}" method="post">
+            {% csrf_token %}
+            <input type="text" name="name" placeholder="Надо сделать:">
+            <input type="submit" value="Сохранить">
+    </form>
+{% endblock %}
